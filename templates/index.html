@@ -6,11 +6,17 @@
     <title>forex</title>
 </head>
 <body>
-    <h1>CHECK</h1>
-
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages%}
+                {% for message in messages %}
+                    {{message}}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>  
     <form  action="/converter" method="POST" >
         
-
         <label for="cur1">Currency from:</label><br>
         <input type="text" id="cur1" name="cur1" class="cur1" autofocus><br>
         <label for="cur2">Currency too:</label><br>
