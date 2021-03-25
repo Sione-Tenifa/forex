@@ -24,16 +24,19 @@ def curr_converter():
 
     curr_one = request.form.get('cur1')
     curr_two = request.form.get('cur2')
+    value = float(request.form.get('value'))
 
-    if Currency_list.keys() >= {curr_one.upper(), curr_two.upper()}:
+    if Currency_list.keys() >= {curr_one.upper(), curr_two.upper()} and type(value) == float:
 
         print('in if')
-        converted = c.convert(curr_one.upper(), curr_two.upper(), float(request.form.get('value'))) 
+        converted = c.convert(curr_one.upper(), curr_two.upper(), value) 
         new_converted = float("{:.2f}".format(converted))
         return render_template("converter.html", new_converted=new_converted)
 
     else:
+        print(type(value))
+        flash("Invalid currency or value-")
+        flash("Please make sure inputs are valid")
 
-        flash("Invalid currency")
         return redirect("/")
     
