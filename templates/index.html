@@ -11,7 +11,7 @@
 <body>
     
     <div class="container">
-        
+        <h1>Forex Python Currency Converter</h1>
             {% with messages = get_flashed_messages() %}
                 {% if messages%}
                     {% for message in messages %}
@@ -29,7 +29,7 @@
             <label for="cur2">Currency too:</label><br>
             <input type="text" id="cur2" name="cur2" class="cur2"><br><br>
             <label for="value">Amount:</label><br>
-            <input type="text" id="value" name="value" class="value"><br><br>
+            <input type="number" id="value" name="value" class="value"><br><br>
             <input class="btn btn-default" type="submit" value="Submit">
             
         </form>

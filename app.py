@@ -25,7 +25,7 @@ def curr_converter():
     curr_one = request.form.get('cur1')
     curr_two = request.form.get('cur2')
     value = float(request.form.get('value'))
-
+    
     if Currency_list.keys() >= {curr_one.upper(), curr_two.upper()} and type(value) == float:
 
         print('in if')
