@@ -35,7 +35,7 @@ def curr_converter():
 
     else:
         print(type(value))
-        flash("Invalid currency or value-")
+        flash("Invalid currency or value")
         flash("Please make sure inputs are valid")
 
         return redirect("/")
